@@ -1,17 +1,12 @@
 //Task1
 
-//Task2
-
-//Task3
-
-//Task4
-
 for (let i = 2; i < 11; i++) {
   if (i % 2 == 0) {
     console.log(i);
   }
 }
-//Task5
+
+//Task2
 
 let i = 0;
 while (i < 3) {
@@ -19,7 +14,7 @@ while (i < 3) {
   i++;
 }
 
-//Task6 WATCHAGAIN
+//Task3
 let num = prompt("Enter number");
 for (;;) {
   if (num < 100) {
@@ -28,4 +23,13 @@ for (;;) {
 }
 alert("Done");
 
-//Task7
+//Task4
+
+let num = 169;
+
+outer: for (let i = 3; i <= num; i++) {
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) continue outer;
+  }
+  console.log(i);
+}
