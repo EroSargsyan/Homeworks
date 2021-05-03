@@ -11,5 +11,5 @@ for (let i = 0; i < valArr.length; i++) {
     break;
   }
 }
-let valStr = Number(newValArr.join(""));
-console.log(valStr);
+let result = Number(newValArr.join(""));
+console.log(result);
