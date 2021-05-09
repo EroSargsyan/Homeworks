@@ -1,26 +1,18 @@
-function evenBetween(value1, value2) {
-  let min = "";
-  let max = "";
-  let str;
+let num1 = 19;
+let num2 = 42;
+
+function evens(num1, num2) {
   let array = [];
-  if (value1 < value2) {
-    min = value1;
-    max = value2;
-  } else {
-    min = value2;
-    max = value1;
+  let newArray = [];
+  for (let i = num1; i <= num2; i++) {
+    array.push(i);
   }
-  outer: for (let i = min; i <= max; i++) {
-    let item = String(i).split("");
-    for (let j = 0; j < item.length; j++) {
-      if (item[j] % 2 != 0) {
-        continue outer;
-      }
-      str = i;
+  for (let j = 0; j < array.length; j++) {
+    if (array[j] % 2 === 0 && Math.floor(array[j] / 10) % 2 === 0) {
+      newArray.push(array[j]);
     }
-    array.push(str);
-    str = "";
   }
-  return array;
+  return newArray;
 }
-console.log(evenBetween(30, 70));
+
+console.log(evens(num1, num2));
