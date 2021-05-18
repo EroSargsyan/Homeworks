@@ -1,11 +1,12 @@
-let january2017 = new Date(2017, 0, 1);
-let january2018 = new Date(2018, 1, 1);
+let date1 = new Date(2017, 0, 1);
+let date2 = new Date(2017, 9, 1);
 
 function intervals(var1, var2) {
-  let diffYear = var2.getFullYear() - var1.getFullYear();
-  let diffMonth2 = var2.getMonth();
-  let diffMonth1 = var1.getMonth();
-
+  let month2 = var2.getMonth();
+  let month1 = var1.getMonth();
+  let year1 = date1.getFullYear();
+  let year2 = date2.getFullYear();
+  let diffYears = year2 - year1;
   let months = [
     "January",
     "February",
@@ -21,19 +22,19 @@ function intervals(var1, var2) {
     "December",
   ];
 
-  let result = "";
-  for (let i = 0; i < diffYear; i++) {
-    result += months;
-  }
+  let result = [];
 
-  for (let j = diffMonth1; j <= diffMonth2 - 1; j++) {
-    if (diffYear === 0) {
-      result += `${months[j]},`;
-    } else {
-      result += `,${months[j]}`;
+  if (diffYears === 1) {
+    for (let i = 0; i < 1; i++) {
+      result.push(months);
+    }
+  } else if (diffYears === 0) {
+    for (let i = month1; i <= month2; i++) {
+      result.push(months[i]);
     }
   }
+
   return result;
 }
 
-console.log(intervals(january2017, january2018));
+console.log(intervals(date1, date2));
