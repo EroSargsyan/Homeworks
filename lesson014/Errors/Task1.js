@@ -1,10 +1,10 @@
-let s = "abc";
-try {
+function reverse(s) {
   if (typeof s === "string") {
     console.log(s.split("").reverse().join(""));
   } else {
-    console.log(s);
+    let err = new Error("error message");
+    console.log(s), console.log(err.message);
   }
-} catch (error) {
-  console.log(error.message);
 }
+
+reverse("123");
