@@ -29,13 +29,13 @@ class CoffeeShop {
   }
   listOrders() {
     if (this.listOrder.length === 0) {
-      console.log([]);
+      return [];
     } else {
-      console.log(this.listOrder);
+      return this.listOrder;
     }
   }
   dueAmount() {
-    console.log(this.listOrder.length);
+    return this.listOrder.length;
   }
 
   cheapestItem() {
@@ -47,7 +47,7 @@ class CoffeeShop {
         index = i;
       }
     }
-    console.log(this.menu[index].name);
+    return this.menu[index].name;
   }
 
   drinksOnly() {
@@ -57,7 +57,7 @@ class CoffeeShop {
         arr.push(this.menu[i].name);
       }
     }
-    console.log(arr);
+    return arr;
   }
 
   foodOnly() {
@@ -67,7 +67,7 @@ class CoffeeShop {
         arr.push(this.menu[i].name);
       }
     }
-    console.log(arr);
+    return arr;
   }
 }
 
@@ -83,8 +83,8 @@ let coffeeShop = new CoffeeShop("Foodicted", [
 coffeeShop.addOrder("pepsi");
 coffeeShop.addOrder("jaguar");
 
-coffeeShop.dueAmount();
+console.log(coffeeShop.dueAmount());
 coffeeShop.fulfillOrder();
 coffeeShop.fulfillOrder();
-coffeeShop.drinksOnly();
-coffeeShop.foodOnly();
+console.log(coffeeShop.drinksOnly());
+console.log(coffeeShop.foodOnly());
