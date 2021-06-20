@@ -1,0 +1,84 @@
+* {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  transition: all 0.3s ease-in;
+}
+section {
+  color: white;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.mainDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  color: rgb(95, 28, 86);
+  box-sizing: border-box;
+  padding: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.input {
+  color: black;
+  margin: 10px;
+  background-color: white;
+  width: 60%;
+  border-radius: 8px;
+  border: transparent;
+  padding: 4px;
+}
+.button {
+  color: rgb(95, 28, 86);
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 9px;
+  border: 1px solid rgb(95, 28, 86);
+  cursor: pointer;
+}
+.unordered {
+  color: rgb(255, 255, 255);
+  width: 100vw;
+}
+.list {
+  display: block;
+  color: blueviolet;
+  width: 80%;
+}
+.editButton {
+  color: aquamarine;
+  width: 10%;
+  margin-right: 15px;
+  border-radius: 6px;
+  padding: 7px;
+  border: 0.5px solid aquamarine;
+  cursor: pointer;
+}
+.deleteButton {
+  color: red;
+  border-radius: 6px;
+  padding: 7px;
+  border: 0.5px solid red;
+  cursor: pointer;
+  width: 10%;
+}
+.divClass {
+  display: flex;
+  margin: 50px;
+}
+.clearButton {
+  color: aquamarine;
+  border-radius: 6px;
+  padding: 7px;
+  border: 0.5px solid aquamarine;
+  cursor: pointer;
+}
