@@ -1,46 +1,60 @@
-let input = document.querySelector(".input");
+let inputMain = document.querySelector(".inputMain");
 let listClass = document.querySelector(".list");
 
-let button = document.querySelector(".button");
-let unordered = document.querySelector(".unordered");
-let divClasses = document.querySelectorAll(".divClass");
+let button = document.querySelector(".AddButton");
+let unorderedList = document.querySelector(".unorderedList");
+let inputLists = document.querySelectorAll("#listDiv");
 let clearItems = document.querySelector(".clearButton");
 let flag = false;
 button.addEventListener("click", () => {
   addElement();
+  inputMain.value = "";
 });
-input.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") addElement();
+inputMain.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addElement();
+    inputMain.value = "";
+  }
 });
 
 function addElement() {
-  flag = true;
+  if (inputMain.value != "") {
+    flag = true;
+  }
+
   while (flag) {
     let div = document.createElement("div");
-    div.className = "divClass";
+    div.className = "listDiv";
 
     let li = document.createElement("li");
-    let editButton = document.createElement("button");
-    editButton.setAttribute("type", "submit");
-    editButton.className = "editButton";
-    editButton.textContent = "edit";
 
     let deleteButton = document.createElement("button");
     deleteButton.setAttribute("type", "submit");
     deleteButton.className = "deleteButton";
     deleteButton.textContent = "delete";
 
-    li.textContent = input.value;
+    /////complete button added
+
+    let completeButton = document.createElement("button");
+    completeButton.setAttribute("type", "submit");
+    completeButton.className = "completeButton";
+    completeButton.textContent = "Complete";
+
+    //////////////
+
+    let inputList = document.createElement("input");
+    inputList.setAttribute("type", "text");
+    inputList.setAttribute("id", "inputList");
 
     li.className = "list";
-    unordered.append(div);
+    unorderedList.append(div);
     div.append(li);
-    div.append(editButton);
+    li.append(inputList);
+    inputList.value = inputMain.value;
+    div.append(completeButton);
     div.append(deleteButton);
     flag = false;
   }
-
-  input.value = ""; ////delete input.value after "Enter"
 
   let deleteButtons = document.querySelectorAll(".deleteButton");
 
@@ -50,22 +64,15 @@ function addElement() {
     });
   });
 
-  let editButtons = document.querySelectorAll(".editButton");
-  editButtons.forEach((editBtn) => {
-    editBtn.addEventListener("click", (event) => {
-      if (
-        event.target.previousSibling.getAttribute("contenteditable") ===
-          "false" ||
-        !event.target.previousSibling.hasAttribute("contenteditable")
-      ) {
-        event.target.previousSibling.setAttribute("contenteditable", "true");
-      } else {
-        event.target.previousSibling.setAttribute("contenteditable", "false");
-      }
+  let completeButtons = document.querySelectorAll(".completeButton");
+  completeButtons.forEach((completeBtn) => {
+    completeBtn.addEventListener("click", (event) => {
+      event.target.previousSibling.firstChild.style.textDecoration =
+        "line-through";
     });
   });
 }
 
 clearItems.addEventListener("click", () => {
-  unordered.innerHTML = "";
+  unorderedList.innerHTML = "";
 });
