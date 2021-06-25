@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="inputSection">
+      <div class="paragContainer">
+        <div class="paragDiv">
+          <p class="paragHours"></p>
+
+          <span class="paragDbl">:</span>
+          <p class="paragMinutes"></p>
+          <span class="paragDbl">:</span>
+          <p class="paragSeconds"></p>
+        </div>
+      </div>
+      <div class="inputContainer">
+        <input
+          type="number"
+          class="input inputHours"
+          value="0"
+          max="99"
+          min="0"
+        />
+        <span>:</span>
+        <input
+          type="number"
+          class="input inputMinutes"
+          value="0"
+          max="59"
+          min="0"
+        />
+        <span>:</span>
+        <input
+          type="number"
+          class="input inputSeconds"
+          value="0"
+          max="59"
+          min="0"
+        />
+      </div>
+      <div class="buttonsDiv">
+        <button type="button" class="startBtn">Start</button>
+        <button type="button" class="resetBtn">Reset</button>
+        <button type="button" class="pauseBtn">Pause</button>
+      </div>
+
+      <audio src="audio/countdown.mp3" id="sound"></audio>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
