@@ -1,0 +1,7 @@
+#imageContainer {
+  width: auto;
+  height: auto;
+}
+img {
+  object-fit: cover;
+}
