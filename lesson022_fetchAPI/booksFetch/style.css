@@ -1,0 +1,27 @@
+#searchButton {
+  width: 60px;
+  height: 20px;
+  margin-top: 5px;
+}
+#inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+#inputField {
+  width: 30vw;
+  margin-top: 15px;
+}
+#prevBtn {
+  width: 10%;
+  height: 20px;
+  margin-top: 5px;
+}
+#nextBtn {
+  width: 10%;
+  height: 20px;
+  margin-top: 5px;
+}
+#nextPreviousPageDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
