@@ -7,7 +7,20 @@ const nextBtn = document.getElementById("nextBtn");
 let page = 1;
 
 searchButton.addEventListener("click", () => {
+  resultsDiv.innerHTML = "";
+
   fetching(createURL(page));
+
+  if (page === 6) {
+    nextBtn.style.display = "none";
+  } else {
+    nextBtn.style.display = "block";
+  }
+  if (page === 1) {
+    prevBtn.style.display = "none";
+  } else {
+    prevBtn.style.display = "block";
+  }
 });
 
 function createURL(page) {
@@ -37,6 +50,16 @@ nextBtn.addEventListener("click", () => {
 
     fetching(createURL(page));
   }
+  if (page === 6) {
+    nextBtn.style.display = "none";
+  } else {
+    nextBtn.style.display = "block";
+  }
+  if (page === 1) {
+    prevBtn.style.display = "none";
+  } else {
+    prevBtn.style.display = "block";
+  }
 });
 
 prevBtn.addEventListener("click", () => {
@@ -44,6 +67,16 @@ prevBtn.addEventListener("click", () => {
     page--;
     resultsDiv.innerHTML = "";
     fetching(createURL(page));
+  }
+  if (page === 6) {
+    nextBtn.style.display = "none";
+  } else {
+    nextBtn.style.display = "block";
+  }
+  if (page === 1) {
+    prevBtn.style.display = "none";
+  } else {
+    prevBtn.style.display = "block";
   }
 });
 

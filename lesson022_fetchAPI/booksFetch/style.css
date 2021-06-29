@@ -15,11 +15,13 @@
   width: 10%;
   height: 20px;
   margin-top: 5px;
+  display: none;
 }
 #nextBtn {
   width: 10%;
   height: 20px;
   margin-top: 5px;
+  display: none;
 }
 #nextPreviousPageDiv {
   display: flex;
